@@ -19,6 +19,9 @@ public class OpenArticleTests extends BaseTest {
                 .typeSearchQuery("Appium")
                 .openFirstResult();
 
-        articlePage.shouldBeOpened();
+        articlePage
+                .closePopupsIfPresent()
+                .shouldBeOpened();
     }
+
 }
