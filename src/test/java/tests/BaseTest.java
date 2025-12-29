@@ -2,7 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import driver.LocalDriver;
+import driver.DriverFactory;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -16,7 +16,8 @@ public class BaseTest {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browser = LocalDriver.class.getName();
+        Configuration.browser =
+                DriverFactory.getDriver().getClass().getName();
         Configuration.browserSize = null;
         Configuration.timeout = 30000;
 
