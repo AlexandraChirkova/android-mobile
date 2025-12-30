@@ -27,7 +27,7 @@ public class EmulationDriver implements WebDriverProvider {
                 .setDeviceName(config.deviceName())
                 .setAvd(config.deviceName())
                 .setAppPackage(config.appPackage())
-                .setAppActivity("org.wikipedia.main.MainActivity")
+                .setAppActivity(config.appActivity())
                 .setNoReset(false)
                 .setAppWaitActivity("*");
 

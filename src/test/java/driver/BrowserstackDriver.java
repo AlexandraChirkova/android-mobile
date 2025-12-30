@@ -12,6 +12,7 @@ import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/*
 public class BrowserstackDriver implements WebDriverProvider {
     private final AppConfig config = ConfigFactory.create(AppConfig.class, System.getProperties());
 
@@ -28,6 +29,37 @@ public class BrowserstackDriver implements WebDriverProvider {
 
         caps.setCapability("deviceName", config.androidDevice());
         caps.setCapability("platformVersion", config.androidOsVersion());
+
+        try {
+            return new RemoteWebDriver(
+                    new URL(config.bsHub()), caps);
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
+*/
+public class BrowserstackDriver implements WebDriverProvider {
+
+    private final AppConfig config =
+            ConfigFactory.create(AppConfig.class, System.getProperties());
+
+    @Nonnull
+    @Override
+    public WebDriver createDriver(@Nonnull Capabilities ignored) {
+
+        MutableCapabilities caps = new MutableCapabilities();
+
+        caps.setCapability("browserstack.user", config.bsUser());
+        caps.setCapability("browserstack.key", config.bsKey());
+
+        caps.setCapability("platformName", "Android");
+        caps.setCapability("automationName", "UiAutomator2");
+
+        caps.setCapability("deviceName", config.androidDevice());
+        caps.setCapability("platformVersion", config.androidOsVersion());
+
+        caps.setCapability("app", config.androidApp());
 
         try {
             return new RemoteWebDriver(
