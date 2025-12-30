@@ -5,7 +5,7 @@
 ```bash
 ./gradlew test -DdeviceHost=emulation
 ```
-или если хотим изменить параметры запуска
+если хотим изменить параметры запуска
 
 ```bash
 ./gradlew clean test \
