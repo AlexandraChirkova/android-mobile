@@ -11,4 +11,7 @@ public interface RealConfig extends Config {
 
     @Key("app.package")
     String appPackage();
+
+    @Key("platform.name")
+    String platformName();
 }
