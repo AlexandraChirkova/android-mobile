@@ -5,6 +5,14 @@
 ```bash
 ./gradlew test -DdeviceHost=emulation
 ```
+или если хотим изменить параметры запуска
+
+```bash
+./gradlew clean test \
+  -Ddevice.name=Nexus_5X \
+  -Dplatform.name=Android \
+  -Dapp.package=org.wikipedia
+```
 
 ### ▶ 1. Реальное устройство (USB, PROD Wikipedia)
 ```bash
