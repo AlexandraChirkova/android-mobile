@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class BaseTest {
 
     @BeforeAll
-    static void beforeAll() {
+    static void setupSelenideConfig() {
         Configuration.browser =
                 DriverFactory.getDriver().getClass().getName();
         Configuration.browserSize = null;
@@ -26,7 +26,7 @@ public class BaseTest {
     }
 
     @BeforeEach
-    void beforeEach() {
+    void addListenerAndOpen() {
         SelenideLogger.removeListener("AllureSelenide");
         SelenideLogger.addListener("AllureSelenide",
                 new AllureSelenide()

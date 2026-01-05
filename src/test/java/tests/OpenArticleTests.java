@@ -1,15 +1,15 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-import pages.ArticlePage;
-import pages.SearchPage;
+import screens.ArticleScreen;
+import screens.SearchScreen;
 
 import static com.codeborne.selenide.Selenide.back;
 
 public class OpenArticleTests extends BaseTest {
 
-    SearchPage searchPage = new SearchPage();
-    ArticlePage articlePage = new ArticlePage();
+    SearchScreen searchPage = new SearchScreen();
+    ArticleScreen articlePage = new ArticleScreen();
 
     @Test
     void openAnyArticleTest() {

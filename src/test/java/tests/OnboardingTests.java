@@ -1,11 +1,11 @@
 package tests;
 
 import org.junit.jupiter.api.Test;
-import pages.OnboardingPage;
+import screens.OnboardingScreen;
 
 public class OnboardingTests extends BaseTest {
 
-    OnboardingPage onboardingPage = new OnboardingPage();
+    OnboardingScreen onboardingPage = new OnboardingScreen();
 
     @Test
     void onboardingFlowTest() {

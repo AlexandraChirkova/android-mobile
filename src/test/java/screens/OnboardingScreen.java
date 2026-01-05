@@ -1,4 +1,4 @@
-package pages;
+package screens;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.id;
 
-public class OnboardingPage {
+public class OnboardingScreen {
 
     private final SelenideElement title =
             $(id("org.wikipedia:id/primaryTextView"));
@@ -19,13 +19,13 @@ public class OnboardingPage {
             $(id("org.wikipedia:id/fragment_onboarding_done_button"));
 
     @Step("Проверить текст onboarding экрана: {expectedText}")
-    public OnboardingPage shouldHaveTitle(String expectedText) {
+    public OnboardingScreen shouldHaveTitle(String expectedText) {
         title.shouldBe(visible).shouldHave(com.codeborne.selenide.Condition.text(expectedText));
         return this;
     }
 
     @Step("Нажать Continue")
-    public OnboardingPage clickContinue() {
+    public OnboardingScreen clickContinue() {
         continueButton.shouldBe(visible).click();
         return this;
     }

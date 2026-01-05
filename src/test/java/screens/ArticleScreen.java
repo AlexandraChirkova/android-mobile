@@ -1,4 +1,4 @@
-package pages;
+package screens;
 
 import io.qameta.allure.Step;
 
@@ -7,10 +7,10 @@ import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.id;
 import static io.appium.java_client.AppiumBy.xpath;
 
-public class ArticlePage {
+public class ArticleScreen {
 
     @Step("Закрыть всплывающие окна на странице статьи (если есть)")
-    public ArticlePage closePopupsIfPresent() {
+    public ArticleScreen closePopupsIfPresent() {
         try {
             $(id("org.wikipedia:id/closeButton")).click();
         } catch (Exception ignored) {
@@ -19,7 +19,7 @@ public class ArticlePage {
     }
 
     @Step("Проверить, что статья открыта")
-    public ArticlePage shouldBeOpened() {
+    public ArticleScreen shouldBeOpened() {
 
         $(xpath("//*[contains(@text,'Appium')]"))
                 .shouldBe(visible);
